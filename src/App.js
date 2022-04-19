@@ -7,16 +7,23 @@ import React from 'react';
 
 const StyledDiv = styled.div`
   color: black;
-  font-size: 9rem;
+  font-size: 3rem;
   padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span{position:absolute;}
+
 `;
 
 const CenterdDiv = styled.div`
   text-align: center;
+
 `;
 
 const StyledTd = styled.td`
 border: 3px solid blue;
+
 
 `;
 
@@ -34,41 +41,21 @@ function App() {
     <div className="App">
       <StyledTable>
         <tbody>
-        <tr>
-          <StyledTd>
-            <StyledDiv>1</StyledDiv>
-          </StyledTd>
-          <StyledTd>
-            <StyledDiv>2</StyledDiv>
-          </StyledTd>
-          <StyledTd>
-            <StyledDiv>3</StyledDiv>
-          </StyledTd>
-        </tr>
+          {[1, 2, 3].map((row) => (
+            <tr key= {row}>
+            {[1, 2, 3].map((column) => (
+              <StyledTd key= {column}>
+              <StyledDiv>
+                <span>
+                  X
+                </span>
+                </StyledDiv>
+              </StyledTd>
 
-        <tr>
-          <StyledTd>
-            <StyledDiv>1</StyledDiv>
-          </StyledTd>
-          <StyledTd>
-            <StyledDiv>2</StyledDiv>
-          </StyledTd>
-          <StyledTd>
-            <StyledDiv>3</StyledDiv>
-          </StyledTd>
-        </tr>
-
-        <tr>
-          <StyledTd>
-            <StyledDiv>1</StyledDiv>
-          </StyledTd>
-          <StyledTd>
-            <StyledDiv>2</StyledDiv>
-          </StyledTd>
-          <StyledTd>
-            <StyledDiv>3</StyledDiv>
-          </StyledTd>
-        </tr>
+            ))}
+            </tr>
+            
+          ))}
         </tbody>
       </StyledTable>
     </div>
