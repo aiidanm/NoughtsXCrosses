@@ -1,9 +1,22 @@
 import logo from './logo.svg';
 import { useState } from 'react';
 import './App.css';
-import Button from './Button';
 import styled from 'styled-components'
 import React from 'react';
+import { render } from '@testing-library/react';
+import Button from './Button';
+
+
+function GameState({ text }) {
+  const [count, setCount] = useState(0);
+    console.log("Clicked");
+    setCount(count+1);
+    console.log(count);
+
+}
+
+
+
 
 const StyledDiv = styled.div`
   color: black;
@@ -32,8 +45,11 @@ const StyledTable = styled.table`
   margin: 0 auto;
 `;
 
-function App() {
 
+
+
+
+function App() {
 
 
 
@@ -47,7 +63,7 @@ function App() {
               <StyledTd key= {column}>
               <StyledDiv>
                 <span>
-                  X
+                  
                 </span>
                 </StyledDiv>
               </StyledTd>
@@ -60,6 +76,9 @@ function App() {
       </StyledTable>
     </div>
   );
+
+
+
 }
 
 
