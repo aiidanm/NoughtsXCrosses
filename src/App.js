@@ -7,27 +7,12 @@ import { render } from '@testing-library/react';
 import Button from './Button';
 
 
-function GameState({ text }) {
-  const [count, setCount] = useState(0);
-    console.log("Clicked");
-    setCount(count+1);
-    console.log(count);
-
-}
 
 
 
 
-const StyledDiv = styled.div`
-  color: black;
-  font-size: 3rem;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  span{position:absolute;}
 
-`;
+
 
 const CenterdDiv = styled.div`
   text-align: center;
@@ -51,7 +36,10 @@ const StyledTable = styled.table`
 
 function App() {
 
+  const [count, setCount] = useState(0)
+  
 
+  
 
   return (
     <div className="App">
@@ -61,11 +49,9 @@ function App() {
             <tr key= {row}>
             {[1, 2, 3].map((column) => (
               <StyledTd key= {column}>
-              <StyledDiv>
-                <span>
+                <Button count={count} setCount={setCount}>
                   
-                </span>
-                </StyledDiv>
+                </Button> 
               </StyledTd>
 
             ))}
